@@ -1,0 +1,243 @@
+2018-05-11 16:15:33,111 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:33,900 DEBUG https://api.github.com:443 "GET /search/code?q=pipeline+NOT+node+in:file+filename:jenkinsfile+?page=1&per_page=100 HTTP/1.1" 200 None
+2018-05-11 16:15:33,934 INFO Attempting to retrieve jenkinsfile(s) from various GitHub repositories through it's REST API...
+2018-05-11 16:15:33,936 INFO https://api.github.com/repositories/121249971/contents/Jenkinsfile?ref=6435ca20fcbf0f2d33c54f005879c556add89093
+2018-05-11 16:15:33,938 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:34,135 DEBUG https://api.github.com:443 "GET /repositories/121249971/contents/Jenkinsfile?ref=6435ca20fcbf0f2d33c54f005879c556add89093 HTTP/1.1" 200 None
+2018-05-11 16:15:34,139 INFO <Response [200]>
+2018-05-11 16:15:34,149 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:34,288 DEBUG https://raw.githubusercontent.com:443 "GET /rjsuzuki/rpi3-page/6435ca20fcbf0f2d33c54f005879c556add89093/Jenkinsfile HTTP/1.1" 200 156
+2018-05-11 16:15:34,293 INFO https://api.github.com/repositories/104853848/contents/Jenkinsfile?ref=59e0f2e65d7e7fb22190e0efc638acddcdb9df6f
+2018-05-11 16:15:34,296 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:34,500 DEBUG https://api.github.com:443 "GET /repositories/104853848/contents/Jenkinsfile?ref=59e0f2e65d7e7fb22190e0efc638acddcdb9df6f HTTP/1.1" 200 None
+2018-05-11 16:15:34,505 INFO <Response [200]>
+2018-05-11 16:15:34,508 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:34,650 DEBUG https://raw.githubusercontent.com:443 "GET /rajneeshsharma76/CrowdJmeter/59e0f2e65d7e7fb22190e0efc638acddcdb9df6f/Jenkinsfile HTTP/1.1" 200 187
+2018-05-11 16:15:34,656 INFO https://api.github.com/repositories/77950722/contents/Jenkinsfile?ref=39741f7abbc70533cc8ffdc05c77473b2888e0f4
+2018-05-11 16:15:34,659 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:34,876 DEBUG https://api.github.com:443 "GET /repositories/77950722/contents/Jenkinsfile?ref=39741f7abbc70533cc8ffdc05c77473b2888e0f4 HTTP/1.1" 200 None
+2018-05-11 16:15:34,881 INFO <Response [200]>
+2018-05-11 16:15:34,886 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:35,010 DEBUG https://raw.githubusercontent.com:443 "GET /ubuntu-Deutschland-eV/verein.ubuntu-de.org/39741f7abbc70533cc8ffdc05c77473b2888e0f4/Jenkinsfile HTTP/1.1" 200 243
+2018-05-11 16:15:35,016 INFO https://api.github.com/repositories/74116737/contents/Jenkinsfile?ref=f1335c7bb428b58ed0d464d0591ce72771bb95c8
+2018-05-11 16:15:35,021 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:35,246 DEBUG https://api.github.com:443 "GET /repositories/74116737/contents/Jenkinsfile?ref=f1335c7bb428b58ed0d464d0591ce72771bb95c8 HTTP/1.1" 200 None
+2018-05-11 16:15:35,251 INFO <Response [200]>
+2018-05-11 16:15:35,256 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:35,387 DEBUG https://raw.githubusercontent.com:443 "GET /Havanero/WebGo/f1335c7bb428b58ed0d464d0591ce72771bb95c8/Jenkinsfile HTTP/1.1" 200 1329
+2018-05-11 16:15:35,392 INFO https://api.github.com/repositories/100200400/contents/Jenkinsfile?ref=c1ca02f2b5f4d447b64c75b1708ff0225acf6226
+2018-05-11 16:15:35,395 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:35,626 DEBUG https://api.github.com:443 "GET /repositories/100200400/contents/Jenkinsfile?ref=c1ca02f2b5f4d447b64c75b1708ff0225acf6226 HTTP/1.1" 200 None
+2018-05-11 16:15:35,631 INFO <Response [200]>
+2018-05-11 16:15:35,634 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:35,767 DEBUG https://raw.githubusercontent.com:443 "GET /ubuntu-Deutschland-eV/ubucon.de/c1ca02f2b5f4d447b64c75b1708ff0225acf6226/Jenkinsfile HTTP/1.1" 200 243
+2018-05-11 16:15:35,772 INFO https://api.github.com/repositories/77928436/contents/Jenkinsfile?ref=c42e99b7d2de4ef91e273b3ddb9b670f9b6148df
+2018-05-11 16:15:35,775 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:36,008 DEBUG https://api.github.com:443 "GET /repositories/77928436/contents/Jenkinsfile?ref=c42e99b7d2de4ef91e273b3ddb9b670f9b6148df HTTP/1.1" 200 None
+2018-05-11 16:15:36,012 INFO <Response [200]>
+2018-05-11 16:15:36,015 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:36,156 DEBUG https://raw.githubusercontent.com:443 "GET /SchweizerischeBundesbahnen/esta-webjs-2/c42e99b7d2de4ef91e273b3ddb9b670f9b6148df/Jenkinsfile HTTP/1.1" 200 1084
+2018-05-11 16:15:36,161 INFO https://api.github.com/repositories/116803249/contents/Jenkinsfile?ref=9230501a85a80fd2869819be3126791b49e2270e
+2018-05-11 16:15:36,164 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:36,361 DEBUG https://api.github.com:443 "GET /repositories/116803249/contents/Jenkinsfile?ref=9230501a85a80fd2869819be3126791b49e2270e HTTP/1.1" 200 None
+2018-05-11 16:15:36,366 INFO <Response [200]>
+2018-05-11 16:15:36,369 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:36,505 DEBUG https://raw.githubusercontent.com:443 "GET /dominikatrela/poc_flask_docker/9230501a85a80fd2869819be3126791b49e2270e/Jenkinsfile HTTP/1.1" 200 545
+2018-05-11 16:15:36,508 INFO https://api.github.com/repositories/106619917/contents/Jenkinsfile?ref=0a4ee440ecc89a34fdf3d7a9ea43e0a60b7df8f9
+2018-05-11 16:15:36,510 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:36,726 DEBUG https://api.github.com:443 "GET /repositories/106619917/contents/Jenkinsfile?ref=0a4ee440ecc89a34fdf3d7a9ea43e0a60b7df8f9 HTTP/1.1" 200 None
+2018-05-11 16:15:36,731 INFO <Response [200]>
+2018-05-11 16:15:36,735 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:36,893 DEBUG https://raw.githubusercontent.com:443 "GET /fjudith/docker-alfresco/0a4ee440ecc89a34fdf3d7a9ea43e0a60b7df8f9/Jenkinsfile HTTP/1.1" 200 2354
+2018-05-11 16:15:36,899 INFO https://api.github.com/repositories/109198436/contents/Jenkinsfile?ref=30765b2b38e10fe927573f249ec6cf74914bd81d
+2018-05-11 16:15:36,902 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:37,113 DEBUG https://api.github.com:443 "GET /repositories/109198436/contents/Jenkinsfile?ref=30765b2b38e10fe927573f249ec6cf74914bd81d HTTP/1.1" 200 None
+2018-05-11 16:15:37,118 INFO <Response [200]>
+2018-05-11 16:15:37,121 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:37,267 DEBUG https://raw.githubusercontent.com:443 "GET /MarcoTulioGT/ConsultasBD/30765b2b38e10fe927573f249ec6cf74914bd81d/Jenkinsfile HTTP/1.1" 200 744
+2018-05-11 16:15:37,271 INFO https://api.github.com/repositories/73967660/contents/pipeline/Jenkinsfile?ref=9d539d0d3f09c98b7a6a8ebb5fd596b866821156
+2018-05-11 16:15:37,273 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:37,488 DEBUG https://api.github.com:443 "GET /repositories/73967660/contents/pipeline/Jenkinsfile?ref=9d539d0d3f09c98b7a6a8ebb5fd596b866821156 HTTP/1.1" 200 None
+2018-05-11 16:15:37,492 INFO <Response [200]>
+2018-05-11 16:15:37,495 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:37,624 DEBUG https://raw.githubusercontent.com:443 "GET /Aqueti/jenkins/9d539d0d3f09c98b7a6a8ebb5fd596b866821156/pipeline/Jenkinsfile HTTP/1.1" 200 1661
+2018-05-11 16:15:37,629 INFO https://api.github.com/repositories/109846332/contents/Jenkinsfile?ref=3674fcf69926768e5bda661cdefd3db6d5cab649
+2018-05-11 16:15:37,632 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:37,833 DEBUG https://api.github.com:443 "GET /repositories/109846332/contents/Jenkinsfile?ref=3674fcf69926768e5bda661cdefd3db6d5cab649 HTTP/1.1" 200 None
+2018-05-11 16:15:37,835 INFO <Response [200]>
+2018-05-11 16:15:37,838 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:37,967 DEBUG https://raw.githubusercontent.com:443 "GET /magagan/sample_test_project/3674fcf69926768e5bda661cdefd3db6d5cab649/Jenkinsfile HTTP/1.1" 200 511
+2018-05-11 16:15:37,973 INFO https://api.github.com/repositories/126787135/contents/Jenkinsfile?ref=8e7e6e6be1184328e0bc72b5e22514ef709148f1
+2018-05-11 16:15:37,977 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:38,187 DEBUG https://api.github.com:443 "GET /repositories/126787135/contents/Jenkinsfile?ref=8e7e6e6be1184328e0bc72b5e22514ef709148f1 HTTP/1.1" 200 None
+2018-05-11 16:15:38,192 INFO <Response [200]>
+2018-05-11 16:15:38,195 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:38,333 DEBUG https://raw.githubusercontent.com:443 "GET /Srinieisdev/dbss_citest/8e7e6e6be1184328e0bc72b5e22514ef709148f1/Jenkinsfile HTTP/1.1" 200 2079
+2018-05-11 16:15:38,337 INFO https://api.github.com/repositories/109199781/contents/Jenkinsfile?ref=24cf0b2cac046cb3164d73cd3a42cdfcc55634f9
+2018-05-11 16:15:38,339 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:38,544 DEBUG https://api.github.com:443 "GET /repositories/109199781/contents/Jenkinsfile?ref=24cf0b2cac046cb3164d73cd3a42cdfcc55634f9 HTTP/1.1" 200 None
+2018-05-11 16:15:38,549 INFO <Response [200]>
+2018-05-11 16:15:38,553 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:38,720 DEBUG https://raw.githubusercontent.com:443 "GET /MarcoTulioGT/ModuloOSM/24cf0b2cac046cb3164d73cd3a42cdfcc55634f9/Jenkinsfile HTTP/1.1" 200 745
+2018-05-11 16:15:38,724 INFO https://api.github.com/repositories/73967660/contents/pipeline_new/Jenkinsfile?ref=e3791e8d4edcee48b339f3e7367ddc0318504d96
+2018-05-11 16:15:38,727 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:38,946 DEBUG https://api.github.com:443 "GET /repositories/73967660/contents/pipeline_new/Jenkinsfile?ref=e3791e8d4edcee48b339f3e7367ddc0318504d96 HTTP/1.1" 200 None
+2018-05-11 16:15:38,952 INFO <Response [200]>
+2018-05-11 16:15:38,956 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:39,116 DEBUG https://raw.githubusercontent.com:443 "GET /Aqueti/jenkins/e3791e8d4edcee48b339f3e7367ddc0318504d96/pipeline_new/Jenkinsfile HTTP/1.1" 200 1554
+2018-05-11 16:15:39,121 INFO https://api.github.com/repositories/122284650/contents/Jenkinsfile?ref=922dfffe6d5a3e0cb9f0857609a23d2b0070b313
+2018-05-11 16:15:39,123 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:39,315 DEBUG https://api.github.com:443 "GET /repositories/122284650/contents/Jenkinsfile?ref=922dfffe6d5a3e0cb9f0857609a23d2b0070b313 HTTP/1.1" 200 None
+2018-05-11 16:15:39,321 INFO <Response [200]>
+2018-05-11 16:15:39,325 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:39,957 DEBUG https://raw.githubusercontent.com:443 "GET /mozilla/wpt-api/922dfffe6d5a3e0cb9f0857609a23d2b0070b313/Jenkinsfile HTTP/1.1" 200 595
+2018-05-11 16:15:39,962 INFO https://api.github.com/repositories/69695836/contents/Jenkinsfile?ref=d05fed570feb226fd474c4876cb283dcbcc9f60f
+2018-05-11 16:15:39,964 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:40,161 DEBUG https://api.github.com:443 "GET /repositories/69695836/contents/Jenkinsfile?ref=d05fed570feb226fd474c4876cb283dcbcc9f60f HTTP/1.1" 200 None
+2018-05-11 16:15:40,166 INFO <Response [200]>
+2018-05-11 16:15:40,168 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:40,296 DEBUG https://raw.githubusercontent.com:443 "GET /rchench/goflash/d05fed570feb226fd474c4876cb283dcbcc9f60f/Jenkinsfile HTTP/1.1" 200 425
+2018-05-11 16:15:40,301 INFO https://api.github.com/repositories/108299631/contents/Jenkinsfile?ref=f73c81560fbd53f112e213fcd6650520c816b27f
+2018-05-11 16:15:40,304 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:40,521 DEBUG https://api.github.com:443 "GET /repositories/108299631/contents/Jenkinsfile?ref=f73c81560fbd53f112e213fcd6650520c816b27f HTTP/1.1" 200 None
+2018-05-11 16:15:40,526 INFO <Response [200]>
+2018-05-11 16:15:40,530 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:40,683 DEBUG https://raw.githubusercontent.com:443 "GET /MarcoTulioGT/TomcatWS/f73c81560fbd53f112e213fcd6650520c816b27f/Jenkinsfile HTTP/1.1" 200 742
+2018-05-11 16:15:40,688 INFO https://api.github.com/repositories/60536546/contents/Jenkinsfile?ref=6a53ad05248af192427609bfd2c4083be7e2d1b2
+2018-05-11 16:15:40,691 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:40,912 DEBUG https://api.github.com:443 "GET /repositories/60536546/contents/Jenkinsfile?ref=6a53ad05248af192427609bfd2c4083be7e2d1b2 HTTP/1.1" 200 None
+2018-05-11 16:15:40,918 INFO <Response [200]>
+2018-05-11 16:15:40,921 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:41,047 DEBUG https://raw.githubusercontent.com:443 "GET /gini/gini-vision-lib-android/6a53ad05248af192427609bfd2c4083be7e2d1b2/Jenkinsfile HTTP/1.1" 200 2503
+2018-05-11 16:15:41,052 INFO https://api.github.com/repositories/120029445/contents/Jenkinsfile?ref=c47bba4a570b27f60debe9f912ab83ab0cc038ee
+2018-05-11 16:15:41,055 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:41,268 DEBUG https://api.github.com:443 "GET /repositories/120029445/contents/Jenkinsfile?ref=c47bba4a570b27f60debe9f912ab83ab0cc038ee HTTP/1.1" 200 None
+2018-05-11 16:15:41,272 INFO <Response [200]>
+2018-05-11 16:15:41,274 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:41,406 DEBUG https://raw.githubusercontent.com:443 "GET /hrushie/jenkinsfile/c47bba4a570b27f60debe9f912ab83ab0cc038ee/Jenkinsfile HTTP/1.1" 200 978
+2018-05-11 16:15:41,412 INFO https://api.github.com/repositories/105199856/contents/Jenkinsfile?ref=179318a9fdf51f0fc63394d98e84f50310d9e074
+2018-05-11 16:15:41,416 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:41,658 DEBUG https://api.github.com:443 "GET /repositories/105199856/contents/Jenkinsfile?ref=179318a9fdf51f0fc63394d98e84f50310d9e074 HTTP/1.1" 200 None
+2018-05-11 16:15:41,663 INFO <Response [200]>
+2018-05-11 16:15:41,668 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:41,818 DEBUG https://raw.githubusercontent.com:443 "GET /mozilla/reticulum/179318a9fdf51f0fc63394d98e84f50310d9e074/Jenkinsfile HTTP/1.1" 200 1590
+2018-05-11 16:15:41,822 INFO https://api.github.com/repositories/95562016/contents/arachnijenkinsfile/scan/Jenkinsfile?ref=7103f700c2f35c5e661cbe76a2f7112b80e2c46e
+2018-05-11 16:15:41,825 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:42,042 DEBUG https://api.github.com:443 "GET /repositories/95562016/contents/arachnijenkinsfile/scan/Jenkinsfile?ref=7103f700c2f35c5e661cbe76a2f7112b80e2c46e HTTP/1.1" 200 None
+2018-05-11 16:15:42,058 INFO <Response [200]>
+2018-05-11 16:15:42,061 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:42,289 DEBUG https://raw.githubusercontent.com:443 "GET /Raty918/ArachniJenkins/7103f700c2f35c5e661cbe76a2f7112b80e2c46e/arachnijenkinsfile/scan/Jenkinsfile HTTP/1.1" 200 802
+2018-05-11 16:15:42,293 INFO https://api.github.com/repositories/95562016/contents/arachnijenkinsfile/alljobs/Jenkinsfile?ref=3ae836d8b1c2a33bc0a509284dc17b9aa3e09aad
+2018-05-11 16:15:42,296 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:42,512 DEBUG https://api.github.com:443 "GET /repositories/95562016/contents/arachnijenkinsfile/alljobs/Jenkinsfile?ref=3ae836d8b1c2a33bc0a509284dc17b9aa3e09aad HTTP/1.1" 200 None
+2018-05-11 16:15:42,517 INFO <Response [200]>
+2018-05-11 16:15:42,520 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:42,669 DEBUG https://raw.githubusercontent.com:443 "GET /Raty918/ArachniJenkins/3ae836d8b1c2a33bc0a509284dc17b9aa3e09aad/arachnijenkinsfile/alljobs/Jenkinsfile HTTP/1.1" 200 987
+2018-05-11 16:15:42,675 INFO https://api.github.com/repositories/127437610/contents/Jenkinsfile?ref=154b635a471f7cea6dacf8cfe5e5b43799654cbd
+2018-05-11 16:15:42,677 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:42,899 DEBUG https://api.github.com:443 "GET /repositories/127437610/contents/Jenkinsfile?ref=154b635a471f7cea6dacf8cfe5e5b43799654cbd HTTP/1.1" 200 None
+2018-05-11 16:15:42,904 INFO <Response [200]>
+2018-05-11 16:15:42,906 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:43,299 DEBUG https://raw.githubusercontent.com:443 "GET /malwoden/conan-ace/154b635a471f7cea6dacf8cfe5e5b43799654cbd/Jenkinsfile HTTP/1.1" 200 231
+2018-05-11 16:15:43,304 INFO https://api.github.com/repositories/95766189/contents/Jenkinsfile?ref=4ef83f9eba51981058094b458bc68bf2cead3b6a
+2018-05-11 16:15:43,309 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:43,520 DEBUG https://api.github.com:443 "GET /repositories/95766189/contents/Jenkinsfile?ref=4ef83f9eba51981058094b458bc68bf2cead3b6a HTTP/1.1" 200 None
+2018-05-11 16:15:43,524 INFO <Response [200]>
+2018-05-11 16:15:43,526 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:43,707 DEBUG https://raw.githubusercontent.com:443 "GET /Raty918/testprojet/4ef83f9eba51981058094b458bc68bf2cead3b6a/Jenkinsfile HTTP/1.1" 200 987
+2018-05-11 16:15:43,711 INFO https://api.github.com/repositories/131543647/contents/Jenkinsfile?ref=c5dace14edbc50fdcc54e1ddd885f35c449e23e9
+2018-05-11 16:15:43,714 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:43,914 DEBUG https://api.github.com:443 "GET /repositories/131543647/contents/Jenkinsfile?ref=c5dace14edbc50fdcc54e1ddd885f35c449e23e9 HTTP/1.1" 200 None
+2018-05-11 16:15:43,921 INFO <Response [200]>
+2018-05-11 16:15:43,925 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:44,062 DEBUG https://raw.githubusercontent.com:443 "GET /drdiags/dst-os-sync/c5dace14edbc50fdcc54e1ddd885f35c449e23e9/Jenkinsfile HTTP/1.1" 200 3207
+2018-05-11 16:15:44,067 INFO https://api.github.com/repositories/121293237/contents/Jenkinsfile?ref=ea11833d292f2b911004745c731189507af2f877
+2018-05-11 16:15:44,070 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:44,278 DEBUG https://api.github.com:443 "GET /repositories/121293237/contents/Jenkinsfile?ref=ea11833d292f2b911004745c731189507af2f877 HTTP/1.1" 200 None
+2018-05-11 16:15:44,283 INFO <Response [200]>
+2018-05-11 16:15:44,287 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:44,451 DEBUG https://raw.githubusercontent.com:443 "GET /pragnyavemuri/Jenkins_pipeline/ea11833d292f2b911004745c731189507af2f877/Jenkinsfile HTTP/1.1" 200 1683
+2018-05-11 16:15:44,456 INFO https://api.github.com/repositories/111412250/contents/Jenkinsfile?ref=efcc8b1dc5d7cf21e2409741bafbdf4ba7c587d3
+2018-05-11 16:15:44,458 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:45,239 DEBUG https://api.github.com:443 "GET /repositories/111412250/contents/Jenkinsfile?ref=efcc8b1dc5d7cf21e2409741bafbdf4ba7c587d3 HTTP/1.1" 200 None
+2018-05-11 16:15:45,244 INFO <Response [200]>
+2018-05-11 16:15:45,246 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:45,369 DEBUG https://raw.githubusercontent.com:443 "GET /gini/gini-vision-lib-android-example/efcc8b1dc5d7cf21e2409741bafbdf4ba7c587d3/Jenkinsfile HTTP/1.1" 200 849
+2018-05-11 16:15:45,374 INFO https://api.github.com/repositories/131533157/contents/01-Starter/esta-webjs-2/Jenkinsfile?ref=6b70b50d9c6e7e5adf2411a3d061e989e8d1f38e
+2018-05-11 16:15:45,377 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:45,585 DEBUG https://api.github.com:443 "GET /repositories/131533157/contents/01-Starter/esta-webjs-2/Jenkinsfile?ref=6b70b50d9c6e7e5adf2411a3d061e989e8d1f38e HTTP/1.1" 200 None
+2018-05-11 16:15:45,591 INFO <Response [200]>
+2018-05-11 16:15:45,595 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:45,731 DEBUG https://raw.githubusercontent.com:443 "GET /jbandi/ng-sbb-2018-3/6b70b50d9c6e7e5adf2411a3d061e989e8d1f38e/01-Starter/esta-webjs-2/Jenkinsfile HTTP/1.1" 200 1084
+2018-05-11 16:15:45,736 INFO https://api.github.com/repositories/122144292/contents/Jenkinsfile?ref=fbf091250a41a3efa9d5dbcf98b45e9aa4074c69
+2018-05-11 16:15:45,739 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:45,956 DEBUG https://api.github.com:443 "GET /repositories/122144292/contents/Jenkinsfile?ref=fbf091250a41a3efa9d5dbcf98b45e9aa4074c69 HTTP/1.1" 200 None
+2018-05-11 16:15:45,961 INFO <Response [200]>
+2018-05-11 16:15:45,965 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:46,096 DEBUG https://raw.githubusercontent.com:443 "GET /acon2018/pipelines/fbf091250a41a3efa9d5dbcf98b45e9aa4074c69/Jenkinsfile HTTP/1.1" 200 553
+2018-05-11 16:15:46,106 INFO https://api.github.com/repositories/101343706/contents/Jenkinsfile?ref=2a05c67cb9a22a88fd34b833788767ae57571d33
+2018-05-11 16:15:46,109 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:46,326 DEBUG https://api.github.com:443 "GET /repositories/101343706/contents/Jenkinsfile?ref=2a05c67cb9a22a88fd34b833788767ae57571d33 HTTP/1.1" 200 None
+2018-05-11 16:15:46,367 INFO <Response [200]>
+2018-05-11 16:15:46,373 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:46,524 DEBUG https://raw.githubusercontent.com:443 "GET /akbrant/condish-release/2a05c67cb9a22a88fd34b833788767ae57571d33/Jenkinsfile HTTP/1.1" 200 11551
+2018-05-11 16:15:46,531 INFO https://api.github.com/repositories/124550763/contents/Jenkinsfile.txt?ref=0ceb7b2a900e78dd6c35d532013c3f60aadd3a64
+2018-05-11 16:15:46,535 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:46,748 DEBUG https://api.github.com:443 "GET /repositories/124550763/contents/Jenkinsfile.txt?ref=0ceb7b2a900e78dd6c35d532013c3f60aadd3a64 HTTP/1.1" 200 None
+2018-05-11 16:15:46,753 INFO <Response [200]>
+2018-05-11 16:15:46,756 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:46,879 DEBUG https://raw.githubusercontent.com:443 "GET /samlevijnr/TheJenkinsFile_2/0ceb7b2a900e78dd6c35d532013c3f60aadd3a64/Jenkinsfile.txt HTTP/1.1" 200 253
+2018-05-11 16:15:46,885 INFO https://api.github.com/repositories/121804316/contents/TestJenkinsfile?ref=812f5737fb78ce7cb041deab69a6ef7305f3d1aa
+2018-05-11 16:15:46,888 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:47,076 DEBUG https://api.github.com:443 "GET /repositories/121804316/contents/TestJenkinsfile?ref=812f5737fb78ce7cb041deab69a6ef7305f3d1aa HTTP/1.1" 200 None
+2018-05-11 16:15:47,081 INFO <Response [200]>
+2018-05-11 16:15:47,085 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:47,211 DEBUG https://raw.githubusercontent.com:443 "GET /connexta/saml-conformance/812f5737fb78ce7cb041deab69a6ef7305f3d1aa/TestJenkinsfile HTTP/1.1" 200 833
+2018-05-11 16:15:47,216 INFO https://api.github.com/repositories/121804316/contents/DeployJenkinsfile?ref=1190701907343d9f8cb5539c63d420c8e8c5050f
+2018-05-11 16:15:47,218 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:47,422 DEBUG https://api.github.com:443 "GET /repositories/121804316/contents/DeployJenkinsfile?ref=1190701907343d9f8cb5539c63d420c8e8c5050f HTTP/1.1" 200 None
+2018-05-11 16:15:47,426 INFO <Response [200]>
+2018-05-11 16:15:47,429 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:47,558 DEBUG https://raw.githubusercontent.com:443 "GET /connexta/saml-conformance/1190701907343d9f8cb5539c63d420c8e8c5050f/DeployJenkinsfile HTTP/1.1" 200 973
+2018-05-11 16:15:47,563 INFO https://api.github.com/repositories/117981903/contents/Jenkinsfile.groovy?ref=21fb9e4444da90a4739006e747dd8ffd6e0f79ce
+2018-05-11 16:15:47,566 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:47,786 DEBUG https://api.github.com:443 "GET /repositories/117981903/contents/Jenkinsfile.groovy?ref=21fb9e4444da90a4739006e747dd8ffd6e0f79ce HTTP/1.1" 200 None
+2018-05-11 16:15:47,791 INFO <Response [200]>
+2018-05-11 16:15:47,793 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:47,912 DEBUG https://raw.githubusercontent.com:443 "GET /LebedOleg/cucumberProject/21fb9e4444da90a4739006e747dd8ffd6e0f79ce/Jenkinsfile.groovy HTTP/1.1" 200 1017
+2018-05-11 16:15:47,915 INFO https://api.github.com/repositories/110674800/contents/Jenkinsfile_25?ref=386523837b1bdae32194e6184c965a91e1cc4b3d
+2018-05-11 16:15:47,917 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:48,136 DEBUG https://api.github.com:443 "GET /repositories/110674800/contents/Jenkinsfile_25?ref=386523837b1bdae32194e6184c965a91e1cc4b3d HTTP/1.1" 200 None
+2018-05-11 16:15:48,141 INFO <Response [200]>
+2018-05-11 16:15:48,145 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:48,287 DEBUG https://raw.githubusercontent.com:443 "GET /snowdrop/boosters-utils/386523837b1bdae32194e6184c965a91e1cc4b3d/Jenkinsfile_25 HTTP/1.1" 200 604
+2018-05-11 16:15:48,292 INFO https://api.github.com/repositories/68904737/contents/content/posts/20161227-jenkinsfile.md?ref=f7389270852e5afad5fe8730879de7f599d3819d
+2018-05-11 16:15:48,294 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:48,507 DEBUG https://api.github.com:443 "GET /repositories/68904737/contents/content/posts/20161227-jenkinsfile.md?ref=f7389270852e5afad5fe8730879de7f599d3819d HTTP/1.1" 200 None
+2018-05-11 16:15:48,512 INFO <Response [200]>
+2018-05-11 16:15:48,514 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:48,637 DEBUG https://raw.githubusercontent.com:443 "GET /ysegorov/blog/f7389270852e5afad5fe8730879de7f599d3819d/content/posts/20161227-jenkinsfile.md HTTP/1.1" 200 892
+2018-05-11 16:15:48,641 INFO https://api.github.com/repositories/121804316/contents/PrTestJenkinsfile?ref=1190701907343d9f8cb5539c63d420c8e8c5050f
+2018-05-11 16:15:48,644 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:48,861 DEBUG https://api.github.com:443 "GET /repositories/121804316/contents/PrTestJenkinsfile?ref=1190701907343d9f8cb5539c63d420c8e8c5050f HTTP/1.1" 200 None
+2018-05-11 16:15:48,865 INFO <Response [200]>
+2018-05-11 16:15:48,868 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:48,999 DEBUG https://raw.githubusercontent.com:443 "GET /connexta/saml-conformance/1190701907343d9f8cb5539c63d420c8e8c5050f/PrTestJenkinsfile HTTP/1.1" 200 1056
+2018-05-11 16:15:49,001 INFO https://api.github.com/repositories/119714353/contents/jenkins/holding-page/HoldingPageJenkinsfile?ref=77e3b79621dffaa27486fb1cbeba44df770e0a8d
+2018-05-11 16:15:49,003 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:49,218 DEBUG https://api.github.com:443 "GET /repositories/119714353/contents/jenkins/holding-page/HoldingPageJenkinsfile?ref=77e3b79621dffaa27486fb1cbeba44df770e0a8d HTTP/1.1" 200 None
+2018-05-11 16:15:49,223 INFO <Response [200]>
+2018-05-11 16:15:49,225 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:49,358 DEBUG https://raw.githubusercontent.com:443 "GET /markday1962/ops/77e3b79621dffaa27486fb1cbeba44df770e0a8d/jenkins/holding-page/HoldingPageJenkinsfile HTTP/1.1" 200 1434
+2018-05-11 16:15:49,364 INFO https://api.github.com/repositories/119714353/contents/jenkins/bluegreen/BlueGreenDeployJenkinsfile?ref=b17ad989e5876fe395cc5243c3d8d63d2f49a4a9
+2018-05-11 16:15:49,367 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:49,563 DEBUG https://api.github.com:443 "GET /repositories/119714353/contents/jenkins/bluegreen/BlueGreenDeployJenkinsfile?ref=b17ad989e5876fe395cc5243c3d8d63d2f49a4a9 HTTP/1.1" 200 None
+2018-05-11 16:15:49,568 INFO <Response [200]>
+2018-05-11 16:15:49,572 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:49,690 DEBUG https://raw.githubusercontent.com:443 "GET /markday1962/ops/b17ad989e5876fe395cc5243c3d8d63d2f49a4a9/jenkins/bluegreen/BlueGreenDeployJenkinsfile HTTP/1.1" 200 2772
+2018-05-11 16:15:49,695 INFO https://api.github.com/repositories/74608936/contents/_posts/2016-10-21-checkstyle-findbugs-results-jenkinsfile.markdown?ref=28c1018d8c64c96ea90432b672dfc79a35e368c6
+2018-05-11 16:15:49,697 DEBUG Starting new HTTPS connection (1): api.github.com
+2018-05-11 16:15:49,936 DEBUG https://api.github.com:443 "GET /repositories/74608936/contents/_posts/2016-10-21-checkstyle-findbugs-results-jenkinsfile.markdown?ref=28c1018d8c64c96ea90432b672dfc79a35e368c6 HTTP/1.1" 200 None
+2018-05-11 16:15:49,941 INFO <Response [200]>
+2018-05-11 16:15:49,943 DEBUG Starting new HTTPS connection (1): raw.githubusercontent.com
+2018-05-11 16:15:50,083 DEBUG https://raw.githubusercontent.com:443 "GET /filiphe/blog/28c1018d8c64c96ea90432b672dfc79a35e368c6/_posts/2016-10-21-checkstyle-findbugs-results-jenkinsfile.markdown HTTP/1.1" 200 671
