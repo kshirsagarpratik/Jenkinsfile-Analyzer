@@ -53,3 +53,35 @@ def getPostCondStats():
     max_post_block = max(post_block.keys(), key=(lambda k: post_block[k]))
     min_post_block = min(post_block.keys(), key=(lambda k: post_block[k]))
     print("The most frequent post condition is " + max_post_block + " and least frequent is " + min_post_block)
+
+
+def getPipelineStageStats():
+    stages = defaultdict(int)
+    for page_number in range(1, 10):
+        try:
+            repositories = P.jenkinsfile_query('stages', page_number)
+            for repo in repositories.json()['items']:
+
+                print(repo['url'])
+                jenkinsfile_content = P.contents_query(repo['url'])
+                file_pointer = open('Jenkinsfile.txt', 'w+')
+                file_pointer.write(jenkinsfile_content.text)
+                file_pointer.close()
+                file_pointer = open('Jenkinsfile.txt', 'r')
+                file_content = file_pointer.readlines()
+                for line in file_content:
+                    m = re.search(r"""\bstage\b\s*\((["'])(?:(?=(\\?))\2.)*?\1\)""", line)
+                    if m:
+                        print(m.group(0))
+                        stagestr = m.group(0).replace("stage('", "").replace("')", '')
+                        stages[stagestr] += 1
+
+                file_pointer.close()
+
+        except Exception as e:
+            print(e)
+
+    print(stages)
+    max_stages = max(stages.keys(), key=(lambda k: stages[k]))
+    min_stages = min(stages.keys(), key=(lambda k: stages[k]))
+    print("The most popular stage is " + max_stages + " and least popular stage is " + min_stages)
