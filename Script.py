@@ -45,7 +45,7 @@ for page_number in range(1, 10): # We are aiming to retrieve ~1000 Jenkinsfiles 
             file_pointer = open('Jenkinsfile.txt', 'r')
             file_content = file_pointer.readlines()
             for line in file_content:
-                if re.search(r'\btry\b', line):
+                if re.search(r'\btry\b\s*\{', line):
                     try_occurences = try_occurences + 1
                     break
             file_pointer.close()
