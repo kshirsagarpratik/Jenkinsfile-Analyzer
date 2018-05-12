@@ -5,6 +5,7 @@ import logging # For creating log files
 import re
 from P import *
 from collections import defaultdict
+import math
 
 
 def getPostCondStats():
@@ -106,3 +107,57 @@ def getPipelineStageStats():
     max_stages = max(stages.keys(), key=(lambda k: stages[k]))
     min_stages = min(stages.keys(), key=(lambda k: stages[k]))
     print("The most popular stage is " + max_stages + " and least popular stage is " + min_stages)
+
+
+def getTriggerStagesCorelation():
+    counts = {'stages': 0, 'triggers': 0, 'stagetrigger': 0, 'stagesq': 0, 'triggersq': 0}
+    totalfiles = 0
+    for page_number in range(1, 2):
+        try:
+            repositories = jenkinsfile_query('triggers+stages', page_number)
+            for repo in repositories.json()['items']:
+
+                print(repo['url'])
+                jenkinsfile_content = contents_query(repo['url'])
+                file_pointer = open('Jenkinsfile.txt', 'w+')
+                file_pointer.write(jenkinsfile_content.text)
+                file_pointer.close()
+                file_pointer = open('Jenkinsfile.txt', 'r')
+                file_content = file_pointer.readlines()
+                stagecount = 0
+                triggercount = 0
+                insidetrigger = False
+                trigger = ''
+                if re.search(r"triggers\s+\{", jenkinsfile_content.text):
+                    totalfiles += 1
+                    for line in file_content:
+                        t = re.search(r"triggers\s+\{", line)
+                        if t:
+                            insidetrigger = True
+                        if insidetrigger:
+                            print(line)
+                            trigger.join(line)
+                            if re.search(r"(cron|pollSCM|upstream)", line):
+                                triggercount += 1
+                            elif re.search(r"\s+\}", line):
+                                insidetrigger = False
+
+                        m = re.search(r"""\bstage\b\s*\((["'])(?:(?=(\\?))\2.)*?\1\)""", line)
+                        if m:
+                            stagecount += 1
+
+                    print(stagecount)
+                    print(triggercount)
+                    counts['stages'] += stagecount
+                    counts['triggers'] += triggercount
+                    counts['stagetrigger'] += (stagecount*triggercount)
+                    counts['stagesq'] += (stagecount**2)
+                    counts['triggersq'] += (triggercount**2)
+                file_pointer.close()
+        except Exception as e:
+            print(e)
+
+    n = (totalfiles * counts['stagetrigger']) - (counts['stages'] * counts['triggers'])
+    d = math.sqrt((totalfiles * counts['stagesq'] - counts['stages']**2) * (totalfiles * counts['triggersq'] - counts['triggers']**2))
+    corr_coeff = n / d
+    print('coeff is %.3f', corr_coeff)
