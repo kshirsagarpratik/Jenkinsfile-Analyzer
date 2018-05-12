@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="483b4011-d4f1-4840-8c24-1c0f65c4fe85" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Script.py" beforeDir="false" afterPath="$PROJECT_DIR$/Script.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/P.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course_proj.log" beforeDir="false" afterPath="$PROJECT_DIR$/course_proj.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Script.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Script.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Script.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+            <state relative-caret-position="205">
+              <caret line="38" column="17" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="39" selection-end-column="37" />
               <folding>
                 <element signature="e#503#573#0" expanded="true" />
               </folding>
@@ -25,7 +27,26 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="P.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/P.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-471">
+              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+              <folding>
+                <element signature="e#1#71#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -39,6 +60,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Script.py" />
+        <option value="$PROJECT_DIR$/P.py" />
       </list>
     </option>
   </component>
@@ -87,7 +109,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.P">
+    <configuration name="P" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sai_phaltankar_pratik_kshirsagar_cp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/P.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="Script" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="sai_phaltankar_pratik_kshirsagar_cp" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,8 +146,13 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <list>
+      <item itemvalue="Python.Script" />
+      <item itemvalue="Python.P" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.P" />
         <item itemvalue="Python.Script" />
       </list>
     </recent_temporary>
@@ -165,10 +210,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Script.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+        <state relative-caret-position="205">
+          <caret line="38" column="17" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="39" selection-end-column="37" />
           <folding>
             <element signature="e#503#573#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/P.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-471">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+          <folding>
+            <element signature="e#1#71#0" expanded="true" />
           </folding>
         </state>
       </provider>
