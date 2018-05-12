@@ -50,79 +50,79 @@ def readyFile(jenkinsfile_content): # to create the jenkinsfile parseable in txt
         print('Error while storing content of Jenkinsfile in txt.')
         logging.error('Error while storing content of Jenkinsfile in txt.')
 
-# def exception_handling(): # try to find the % of jenkinsfiles that exhibit exception handling.
-#     number = 1 # to iterate over the jenkinsfiles.
-#     try_occurences = 0 # measure the occurence of exception handling in jenkinsfiles.
-#     for page_number in range(1,10): # We are aiming to retrieve ~1000 Jenkinsfiles that are available on GitHub, as every page has max 100 results.
-#         repositories = jenkinsfile_query('try', page_number)
-#         try:
-#
-#             for repo in repositories.json()['items']:
-#                 print(repo['url'])
-#                 logging.info(repo['url'])
-#                 jenkinsfile_content = contents_query(repo['url'])
-#                 file_content = readyFile(jenkinsfile_content)
-#                 for line in file_content:
-#                     if re.search(r'\btry\b\s*\{', line): # using regex to find the occurence of a 'try' block
-#                         try_occurences = try_occurences + 1 # increment count of total jenkinsfiles that have 'try' blocks.
-#                         break
-#                 number = number + 1
-#
-#         except Exception as e:
-#             print('Error occurred in finding out which files have exception handling')
-#             logging.error('Error occurred while finding out the jenkinsfiles that have exception handling')
-#
-#     print('We found error handling mechanism present in ' + str(try_occurences) + ' Jenkinsfiles')
-#     logging.info('We found error handling mechanism present in ' + str(try_occurences) + ' Jenkinsfiles')
-#     print('We were able to retrieve ' + str(number - 1) + ' such Jenkinsfiles.')
-#     logging.info('We were able to retrieve ' + str(number - 1) + ' such Jenkinsfiles.')
-#
-#     percent_exception_handling = try_occurences / (number - 1)
-#     return  percent_exception_handling # return as a decimal fraction.
-#
-# # eh = exception_handling()
-# # print(eh)
-#
+def exception_handling(): # try to find the % of jenkinsfiles that exhibit exception handling.
+    number = 1 # to iterate over the jenkinsfiles.
+    try_occurences = 0 # measure the occurence of exception handling in jenkinsfiles.
+    for page_number in range(1,10): # We are aiming to retrieve ~1000 Jenkinsfiles that are available on GitHub, as every page has max 100 results.
+        repositories = jenkinsfile_query('try', page_number)
+        try:
 
-# def docker():
-#     number = 1
-#     count_docker = 0
-#     count_dockerfile = 0
-#
-#     # \bdocker\b\s*\{
-#     # \bdockerfile\b\s*\{
-#
-#     for page_number in range(1,10): # We are aiming to retrieve ~1000 Jenkinsfiles that are available on GitHub, as every page has max 100 results.
-#         repositories = jenkinsfile_query('docker', page_number)
-#         try:
-#
-#             for repo in repositories.json()['items']:
-#                 print(repo['url'])
-#                 logging.info(repo['url'])
-#                 jenkinsfile_content = contents_query(repo['url'])
-#                 file_content = readyFile(jenkinsfile_content)
-#
-#                 for line in file_content:
-#                     if re.search(r'\bdocker\b\s*\{', line): # using regex to find the occurence of keyword 'docker'.
-#                         count_docker = count_docker + 1 # increment count of total jenkinsfiles that use 'docker' in some way.
-#
-#                     if re.search(r'\bdockerfile\b\s*\{', line): # using regex to find the occurence of keyword 'dockerfile'.
-#                         count_dockerfile = count_dockerfile + 1 # increment count of total jenkinsfiles that use 'dockerfile' in any way.
-#
-#                 number = number + 1
-#
-#         except Exception as e:
-#             print('Error occurred in finding out what % of jenkins pipelines use docker.')
-#             logging.error('Error occurred while finding out what % of jenkins pipelines use docker.')
-#
-#     ''' Generate percentage of occurrences, actually a fraction'''
-#     percent_docker = count_docker / (number - 1)
-#     percent_dockerfile = count_dockerfile / (number - 1)
-#     percent_total = percent_docker + percent_dockerfile
-#
-#     docker_dictionary = {'docker' : percent_docker, 'dockerfile' : percent_dockerfile, 'total' : percent_total}
-#     return docker_dictionary
-#
+            for repo in repositories.json()['items']:
+                print(repo['url'])
+                logging.info(repo['url'])
+                jenkinsfile_content = contents_query(repo['url'])
+                file_content = readyFile(jenkinsfile_content)
+                for line in file_content:
+                    if re.search(r'\btry\b\s*\{', line): # using regex to find the occurence of a 'try' block
+                        try_occurences = try_occurences + 1 # increment count of total jenkinsfiles that have 'try' blocks.
+                        break
+                number = number + 1
+
+        except Exception as e:
+            print('Error occurred in finding out which files have exception handling')
+            logging.error('Error occurred while finding out the jenkinsfiles that have exception handling')
+
+    print('We found error handling mechanism present in ' + str(try_occurences) + ' Jenkinsfiles')
+    logging.info('We found error handling mechanism present in ' + str(try_occurences) + ' Jenkinsfiles')
+    print('We were able to retrieve ' + str(number - 1) + ' such Jenkinsfiles.')
+    logging.info('We were able to retrieve ' + str(number - 1) + ' such Jenkinsfiles.')
+
+    percent_exception_handling = try_occurences / (number - 1)
+    return  percent_exception_handling # return as a decimal fraction.
+
+# eh = exception_handling()
+# print(eh)
+
+
+def docker():
+    number = 1
+    count_docker = 0
+    count_dockerfile = 0
+
+    # \bdocker\b\s*\{
+    # \bdockerfile\b\s*\{
+
+    for page_number in range(1, 10): # We are aiming to retrieve ~1000 Jenkinsfiles that are available on GitHub, as every page has max 100 results.
+        repositories = jenkinsfile_query('docker', page_number)
+        try:
+
+            for repo in repositories.json()['items']:
+                print(repo['url'])
+                logging.info(repo['url'])
+                jenkinsfile_content = contents_query(repo['url'])
+                file_content = readyFile(jenkinsfile_content)
+
+                for line in file_content:
+                    if re.search(r'\bdocker\b\s*\{', line): # using regex to find the occurence of keyword 'docker'.
+                        count_docker = count_docker + 1 # increment count of total jenkinsfiles that use 'docker' in some way.
+
+                    if re.search(r'\bdockerfile\b\s*\{', line): # using regex to find the occurence of keyword 'dockerfile'.
+                        count_dockerfile = count_dockerfile + 1 # increment count of total jenkinsfiles that use 'dockerfile' in any way.
+
+                number = number + 1
+
+        except Exception as e:
+            print('Error occurred in finding out what % of jenkins pipelines use docker.')
+            logging.error('Error occurred while finding out what % of jenkins pipelines use docker.')
+
+    ''' Generate percentage of occurrences, actually a fraction'''
+    percent_docker = count_docker / (number - 1)
+    percent_dockerfile = count_dockerfile / (number - 1)
+    percent_total = percent_docker + percent_dockerfile
+
+    docker_dictionary = {'docker' : percent_docker, 'dockerfile' : percent_dockerfile, 'total' : percent_total}
+    return docker_dictionary
+
 # docker_stats = docker()
 # print(docker_stats)
 
@@ -192,8 +192,9 @@ def global_agent(): # each stage needs it's own agent, global agent does not exi
 
     agent = popular_agent()
     print(agent['none'])
+    return agent['none']
 
 global_agent()
-# sort the dictionaries.
 
-# most used docker image
+# sort the dictionaries.
+#unit tests
