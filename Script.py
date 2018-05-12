@@ -29,7 +29,7 @@ print('Attempting to retrieve jenkinsfile(s) from various GitHub repositories th
 logging.info('Attempting to retrieve jenkinsfile(s) from various GitHub repositories through it\'s REST API...')
 
 for page_number in range(1, 10): # We are aiming to retrieve ~1000 Jenkinsfiles that are available on GitHub, as every page has max 100 results.
-    repositories = requests.get('https://api.github.com/search/code?q=try+in:file+filename:jenkinsfile+?page=' + str(page_number) + '&per_page=100', auth = ('kshirsagarpratik', 'Chinku95'))
+    repositories = requests.get('https://api.github.com/search/code?q=agent+in:file+filename:jenkinsfile+?page=' + str(page_number) + '&per_page=100', auth = ('kshirsagarpratik', 'Chinku95'))
 
     try:
         for repo in repositories.json()['items']:

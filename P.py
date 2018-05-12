@@ -50,11 +50,53 @@ def readyFile(jenkinsfile_content): # to create the jenkinsfile parseable in txt
         print('Error while storing content of Jenkinsfile in txt.')
         logging.error('Error while storing content of Jenkinsfile in txt.')
 
-def exception_handling(): # try to find the % of jenkinsfiles that exhibit exception handling.
-    number = 1 # to iterate over the jenkinsfiles.
-    try_occurences = 0 # measure the occurence of exception handling in jenkinsfiles.
+# def exception_handling(): # try to find the % of jenkinsfiles that exhibit exception handling.
+#     number = 1 # to iterate over the jenkinsfiles.
+#     try_occurences = 0 # measure the occurence of exception handling in jenkinsfiles.
+#     for page_number in range(1,10): # We are aiming to retrieve ~1000 Jenkinsfiles that are available on GitHub, as every page has max 100 results.
+#         repositories = jenkinsfile_query('try', page_number)
+#         try:
+#
+#             for repo in repositories.json()['items']:
+#                 print(repo['url'])
+#                 logging.info(repo['url'])
+#                 jenkinsfile_content = contents_query(repo['url'])
+#                 file_content = readyFile(jenkinsfile_content)
+#                 for line in file_content:
+#                     if re.search(r'\btry\b\s*\{', line): # using regex to find the occurence of a 'try' block
+#                         try_occurences = try_occurences + 1 # increment count of total jenkinsfiles that have 'try' blocks.
+#                         break
+#                 number = number + 1
+#
+#         except Exception as e:
+#             print('Error occurred in finding out which files have exception handling')
+#             logging.error('Error occurred while finding out the jenkinsfiles that have exception handling')
+#
+#     print('We found error handling mechanism present in ' + str(try_occurences) + ' Jenkinsfiles')
+#     logging.info('We found error handling mechanism present in ' + str(try_occurences) + ' Jenkinsfiles')
+#     print('We were able to retrieve ' + str(number - 1) + ' such Jenkinsfiles.')
+#     logging.info('We were able to retrieve ' + str(number - 1) + ' such Jenkinsfiles.')
+#
+#     percent_exception_handling = try_occurences / (number - 1)
+#     return  percent_exception_handling # return as a decimal fraction.
+#
+# # eh = exception_handling()
+# # print(eh)
+#
+# def docker_agent():
+
+def popular_agent(): # Find the most popular kind of agent in jenkinsfiles.
+
+    none_count = 0
+    node_count = 0
+    any_count = 0
+    label_count = 0
+    docker_count = 0
+    dockerfile_count = 0
+    number = 1
+
     for page_number in range(1,10): # We are aiming to retrieve ~1000 Jenkinsfiles that are available on GitHub, as every page has max 100 results.
-        repositories = jenkinsfile_query('try', page_number)
+        repositories = jenkinsfile_query('agent', page_number)
         try:
 
             for repo in repositories.json()['items']:
@@ -62,23 +104,48 @@ def exception_handling(): # try to find the % of jenkinsfiles that exhibit excep
                 logging.info(repo['url'])
                 jenkinsfile_content = contents_query(repo['url'])
                 file_content = readyFile(jenkinsfile_content)
+
                 for line in file_content:
-                    if re.search(r'\btry\b\s*\{', line): # using regex to find the occurence of a 'try' block
-                        try_occurences = try_occurences + 1 # increment count of total jenkinsfiles that have 'try' blocks.
-                        break
+
+                    if re.search(r'\bagent\b\s*\bnone\b', line): # using regex to find the occurence of an agent of type 'none'.
+                        none_count = none_count + 1 # increment count of total jenkinsfiles that have an agent of type 'none'.
+
+                    if re.search(r'\bagent\b\s*\bany\b', line): # using regex to find the occurence of an agent of type 'any'.
+                        any_count = any_count + 1 # increment count of total jenkinsfiles that have an agent of type 'any'.
+
+                    if re.search(r'\bagent\b\s*\{\s*\blabel\b', line): # using regex to find the occurence of an agent of type 'label'.
+                        label_count = label_count + 1 # increment count of total jenkinsfiles that have an agent of type 'label'.
+
+                    if re.search(r'\bagent\b\s*\{\s*\bnode\b', line): # using regex to find the occurence of an agent of type 'node'.
+                        node_count = node_count + 1 # increment count of total jenkinsfiles that have an agent of type 'node'.
+
+                    if re.search(r'\bagent\b\s*\{\s*\bdocker\b', line): # using regex to find the occurence of an agent of type 'docker'.
+                        docker_count = docker_count + 1 # increment count of total jenkinsfiles that have an agent of type 'docker'.
+
+                    if re.search(r'\bagent\b\s*\{\s*\bdockerfile\b', line): # using regex to find the occurence of an agent of type 'dockerfile'.
+                        dockerfile_count = dockerfile_count + 1 # increment count of total jenkinsfiles that have an agent of type 'dockerfile'.
+
+
                 number = number + 1
 
         except Exception as e:
-            print('Error occurred in finding out which files have exception handling')
-            logging.error('Error occurred while finding out the jenkinsfiles that have exception handling')
+            print('Error occurred in finding out which kinds of agent are the most popular.')
+            logging.error('Error occurred while finding out the most popular kind of agent.')
 
-    print('We found error handling mechanism present in ' + str(try_occurences) + ' Jenkinsfiles')
-    logging.info('We found error handling mechanism present in ' + str(try_occurences) + ' Jenkinsfiles')
-    print('We were able to retrieve ' + str(number - 1) + ' such Jenkinsfiles.')
-    logging.info('We were able to retrieve ' + str(number - 1) + ' such Jenkinsfiles.')
+    ''' Generate percentage of occurrences, actually a fraction'''
+    percent_any = any_count / (number - 1)
+    percent_node = node_count / (number - 1)
+    percent_none = none_count / (number - 1)
+    percent_label = label_count / (number - 1)
+    percent_docker = docker_count / (number - 1)
+    percent_dockerfile = dockerfile_count / (number - 1)
 
-    percent_exception_handling = try_occurences / (number - 1)
-    return  percent_exception_handling # return as a decimal fraction.
+    agent_dictionary = {'any' : percent_any, 'node' : percent_node, 'none' : percent_none, 'label' : percent_label, 'docker' : percent_docker, 'dockerfile' : percent_dockerfile}
+    return agent_dictionary
 
-eh = exception_handling()
-print(eh)
+agent = popular_agent()
+print(agent)
+
+# def global_agent():
+
+# most used docker image
