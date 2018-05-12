@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="483b4011-d4f1-4840-8c24-1c0f65c4fe85" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/P.py" beforeDir="false" afterPath="$PROJECT_DIR$/P.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script.py" beforeDir="false" afterPath="$PROJECT_DIR$/Script.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/course_proj.log" beforeDir="false" afterPath="$PROJECT_DIR$/course_proj.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +29,8 @@
       <file leaf-file-name="P.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/P.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-591">
-              <caret line="89" selection-start-line="89" selection-end-line="89" />
+            <state relative-caret-position="214">
+              <caret line="119" column="55" selection-start-line="119" selection-start-column="55" selection-end-line="119" selection-end-column="55" />
               <folding>
                 <element signature="e#1#71#0" expanded="true" />
               </folding>
@@ -164,10 +163,10 @@
     <frame x="20" y="43" width="1400" height="773" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24945612" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24945612" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" weight="0.32863188" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32863188" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32863188" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -225,8 +224,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/P.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-591">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        <state relative-caret-position="214">
+          <caret line="119" column="55" selection-start-line="119" selection-start-column="55" selection-end-line="119" selection-end-column="55" />
           <folding>
             <element signature="e#1#71#0" expanded="true" />
           </folding>
