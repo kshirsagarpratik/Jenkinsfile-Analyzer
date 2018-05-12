@@ -3,7 +3,7 @@ import os # For performing tasks on shell.
 import subprocess # For performing tasks on shell.
 import logging # For creating log files
 import re
-import P
+from P import *
 from collections import defaultdict
 
 
@@ -13,11 +13,11 @@ def getPostCondStats():
     post_block = defaultdict(int)
     for page_number in range(1, 10):
         try:
-            repositories = P.jenkinsfile_query('post', page_number)
+            repositories = jenkinsfile_query('post', page_number)
             for repo in repositories.json()['items']:
 
                 print(repo['url'])
-                jenkinsfile_content = P.contents_query(repo['url'])
+                jenkinsfile_content = contents_query(repo['url'])
                 file_pointer = open('Jenkinsfile.txt', 'w+')
                 file_pointer.write(jenkinsfile_content.text)
                 file_pointer.close()
@@ -57,31 +57,52 @@ def getPostCondStats():
 
 def getPipelineStageStats():
     stages = defaultdict(int)
+    stageCountAll = list()
     for page_number in range(1, 10):
         try:
-            repositories = P.jenkinsfile_query('stages', page_number)
+            repositories = jenkinsfile_query('stages', page_number)
             for repo in repositories.json()['items']:
 
                 print(repo['url'])
-                jenkinsfile_content = P.contents_query(repo['url'])
+                jenkinsfile_content = contents_query(repo['url'])
                 file_pointer = open('Jenkinsfile.txt', 'w+')
                 file_pointer.write(jenkinsfile_content.text)
                 file_pointer.close()
                 file_pointer = open('Jenkinsfile.txt', 'r')
                 file_content = file_pointer.readlines()
+                stagecount = 0
+                triggercount = 0
+                insidetrigger = False
+                trigger = ''
                 for line in file_content:
                     m = re.search(r"""\bstage\b\s*\((["'])(?:(?=(\\?))\2.)*?\1\)""", line)
                     if m:
-                        print(m.group(0))
                         stagestr = m.group(0).replace("stage('", "").replace("')", '')
                         stages[stagestr] += 1
+                        stagecount += 1
+                    else:
+                        t = re.search(r"triggers\s+\{", line)
+                        #t = re.search(r"^(cron|pollSCM|upstream)", line)
+                        if t:
+                            insidetrigger = True
+                        if insidetrigger:
+                            print(line)
+                            trigger.join(line)
+                            if re.search(r"\s+\}", line):
+                                insidetrigger = False
+                            elif re.search(r"(cron|pollSCM|upstream)", line):
+                                triggercount += 1
 
                 file_pointer.close()
+                print(trigger)
+                print(stagecount)
+                print(triggercount)
+                stageCountAll.append((stagecount, triggercount))
 
         except Exception as e:
             print(e)
 
-    print(stages)
+    #print(stages)
     max_stages = max(stages.keys(), key=(lambda k: stages[k]))
     min_stages = min(stages.keys(), key=(lambda k: stages[k]))
     print("The most popular stage is " + max_stages + " and least popular stage is " + min_stages)
