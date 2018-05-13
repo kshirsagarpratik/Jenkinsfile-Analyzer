@@ -47,6 +47,7 @@ def readyFile(jenkinsfile_content): # to create the jenkinsfile parseable in txt
 
 
 def exception_handling(): # try to find the % of jenkinsfiles that exhibit exception handling.
+    logging.info('Analyzing Jenkinsfiles for exception handling')
     number = 1 # to iterate over the jenkinsfiles.
     try_occurences = 0 # measure the occurence of exception handling in jenkinsfiles.
     for page_number in range(1,10): # We are aiming to retrieve ~1000 Jenkinsfiles that are available on GitHub, as every page has max 100 results.
@@ -67,6 +68,7 @@ def exception_handling(): # try to find the % of jenkinsfiles that exhibit excep
         except Exception as e:
             print('Error occurred in finding out which files have exception handling')
             logging.error('Error occurred while finding out the jenkinsfiles that have exception handling')
+            logging.error(e)
 
     print('We found error handling mechanism present in ' + str(try_occurences) + ' Jenkinsfiles')
     logging.info('We found error handling mechanism present in ' + str(try_occurences) + ' Jenkinsfiles')
@@ -81,6 +83,7 @@ def exception_handling(): # try to find the % of jenkinsfiles that exhibit excep
 
 
 def docker():
+    logging.info('Analyzing Jenkinsfiles...')
     number = 1
     count_docker = 0
     count_dockerfile = 0
@@ -110,18 +113,24 @@ def docker():
         except Exception as e:
             print('Error occurred in finding out what % of jenkins pipelines use docker.')
             logging.error('Error occurred while finding out what % of jenkins pipelines use docker.')
+            logging.error(e)
 
     ''' Generate percentage of occurrences, actually a fraction'''
-    percent_docker = count_docker / (number - 1)
-    percent_dockerfile = count_dockerfile / (number - 1)
-    percent_total = percent_docker + percent_dockerfile
+    try:
+        percent_docker = count_docker / (number - 1)
+        percent_dockerfile = count_dockerfile / (number - 1)
+        percent_total = percent_docker + percent_dockerfile
 
-    docker_dictionary = {'docker' : percent_docker, 'dockerfile' : percent_dockerfile, 'total' : percent_total}
+        docker_dictionary = {'docker' : percent_docker, 'dockerfile' : percent_dockerfile, 'total' : percent_total}
+    except Exception as e:
+        logging.error(e)
+        docker_dictionary = {}
+
     return docker_dictionary
 
 
 def popular_agent(): # Find the most popular kind of agent in jenkinsfiles.
-
+    logging.info('Analyzing Jenkinsfiles for agent used')
     none_count = 0
     node_count = 0
     any_count = 0
@@ -166,16 +175,22 @@ def popular_agent(): # Find the most popular kind of agent in jenkinsfiles.
         except Exception as e:
             print('Error occurred in finding out which kinds of agent are the most popular.')
             logging.error('Error occurred while finding out the most popular kind of agent.')
+            logging.error(e)
 
     ''' Generate percentage of occurrences, actually a fraction'''
-    percent_any = any_count / (number - 1)
-    percent_node = node_count / (number - 1)
-    percent_none = none_count / (number - 1)
-    percent_label = label_count / (number - 1)
-    percent_docker = docker_count / (number - 1)
-    percent_dockerfile = dockerfile_count / (number - 1)
+    try:
+        percent_any = any_count / (number - 1)
+        percent_node = node_count / (number - 1)
+        percent_none = none_count / (number - 1)
+        percent_label = label_count / (number - 1)
+        percent_docker = docker_count / (number - 1)
+        percent_dockerfile = dockerfile_count / (number - 1)
 
-    agent_dictionary = {'any' : percent_any, 'node' : percent_node, 'none' : percent_none, 'label' : percent_label, 'docker' : percent_docker, 'dockerfile' : percent_dockerfile}
+        agent_dictionary = {'any' : percent_any, 'node' : percent_node, 'none' : percent_none, 'label' : percent_label, 'docker' : percent_docker, 'dockerfile' : percent_dockerfile}
+    except Exception as e:
+        logging.error(e)
+        agent_dictionary = {}
+
     return agent_dictionary
 
 
@@ -187,6 +202,7 @@ def global_agent(): # each stage needs it's own agent, global agent does not exi
 
 
 def get_post_cond_stats():
+    logging.info('Analyzing Jenkinsfiles for popular post conditions')
     post_block = defaultdict(int)
     post_conditions = []
     for page_number in range(1, 10):
@@ -234,27 +250,34 @@ def get_post_cond_stats():
 
         except Exception as e:
             print(e)
+            logging.error(e)
 
-    min_value = min(post_block.values())
-    max_value = max(post_block.values())
-    min_result = [(key, value) for key, value in post_block.items() if value == min_value]
-    max_result = [(key, value) for key, value in post_block.items() if value == max_value]
+    try:
+        min_value = min(post_block.values())
+        max_value = max(post_block.values())
+        min_result = [(key, value) for key, value in post_block.items() if value == min_value]
+        max_result = [(key, value) for key, value in post_block.items() if value == max_value]
 
-    max_dict_list = []
-    for key in max_result:
-        max_dict_list.append({'post_condition': key[0], 'count': key[1]})
+        max_dict_list = []
+        for key in max_result:
+            max_dict_list.append({'post_condition': key[0], 'count': key[1]})
 
-    min_dict_list = []
-    for key in min_result:
-        min_dict_list.append({'post_condition': key[0], 'count': key[1]})
+        min_dict_list = []
+        for key in min_result:
+            min_dict_list.append({'post_condition': key[0], 'count': key[1]})
 
-    result = {'most_frequent': max_dict_list,
-              'least_frequent': min_dict_list,
-              'post_conditions': post_conditions}
+        result = {'most_frequent': max_dict_list,
+                  'least_frequent': min_dict_list,
+                  'post_conditions': post_conditions}
+    except Exception as e:
+        logging.error(e)
+        result = {}
+
     return result
 
 
 def get_pipeline_stage_stats():
+    logging.info('Analyzing Jenkinsfiles for popular operations')
     stages = defaultdict(int)
     stageCountAll = list()
     stagesPerFile = list()
@@ -275,45 +298,48 @@ def get_pipeline_stage_stats():
                         stages[stagestr] += 1
                         stagecount += 1
                         stagesDict['stages'].append(stagestr)
-                file_pointer.close()
-                print(stagecount)
 
                 stageCountAll.append(stagecount)
                 stagesPerFile.append(stagesDict)
         except Exception as e:
             print(e)
 
-    max_stages = max(stages.keys(), key=(lambda k: stages[k]))
-    min_stages = min(stages.keys(), key=(lambda k: stages[k]))
-    print("The most popular stage is " + max_stages + " and least popular stage is " + min_stages)
+    try:
+        max_stages = max(stages.keys(), key=(lambda k: stages[k]))
+        min_stages = min(stages.keys(), key=(lambda k: stages[k]))
+        print("The most popular stage is " + max_stages + " and least popular stage is " + min_stages)
 
-    min_value = min(stages.values())
-    max_value = max(stages.values())
-    min_result = [(key, value) for key, value in stages.items() if value == min_value]
-    max_result = [(key, value) for key, value in stages.items() if value == max_value]
+        min_value = min(stages.values())
+        max_value = max(stages.values())
+        min_result = [(key, value) for key, value in stages.items() if value == min_value]
+        max_result = [(key, value) for key, value in stages.items() if value == max_value]
 
-    max_stages_dict_list = []
-    for key in max_result:
-        max_stages_dict_list.append({'stage': key[0], 'count': key[1]})
+        max_stages_dict_list = []
+        for key in max_result:
+            max_stages_dict_list.append({'stage': key[0], 'count': key[1]})
 
-    min_stages_dict_list = []
-    for key in min_result:
-        min_stages_dict_list.append({'stage': key[0], 'count': key[1]})
+        min_stages_dict_list = []
+        for key in min_result:
+            min_stages_dict_list.append({'stage': key[0], 'count': key[1]})
 
-    mean_stages = float(sum(stageCountAll)) / max(len(stageCountAll), 1)
-    result = {'most_popular_operation': max_stages_dict_list,
-              'least_popular_operation': min_stages_dict_list,
-              'avg_stages': mean_stages,
-              'stages_per_file': stagesPerFile}
+        mean_stages = float(sum(stageCountAll)) / max(len(stageCountAll), 1)
+        result = {'most_popular_operation': max_stages_dict_list,
+                  'least_popular_operation': min_stages_dict_list,
+                  'avg_stages': mean_stages,
+                  'stages_per_file': stagesPerFile}
+    except Exception as e:
+        logging.error(e)
+        result = {}
 
     return result
 
 
 def get_trigger_stages_correlation():
+    logging.info('Analyzing Jenkinsfiles for correlation between stages and triggers')
     counts = {'stages': 0, 'triggers': 0, 'stagetrigger': 0, 'stagesq': 0, 'triggersq': 0}
     totalfiles = 0
     jenkinsfiles = []
-    for page_number in range(1, 2):
+    for page_number in range(1, 10):
         try:
             repositories = jenkinsfile_query('triggers+stages', page_number)
             for repo in repositories.json()['items']:
@@ -332,7 +358,6 @@ def get_trigger_stages_correlation():
                         if t:
                             insidetrigger = True
                         if insidetrigger:
-                            print(line)
                             trigger.join(line)
                             if re.search(r"(cron|pollSCM|upstream)", line):
                                 triggercount += 1
@@ -343,24 +368,26 @@ def get_trigger_stages_correlation():
                         if m:
                             stagecount += 1
 
-                    print(stagecount)
-                    print(triggercount)
                     counts['stages'] += stagecount
                     counts['triggers'] += triggercount
                     counts['stagetrigger'] += (stagecount*triggercount)
                     counts['stagesq'] += (stagecount**2)
                     counts['triggersq'] += (triggercount**2)
                     jenkinsfiles.append({'url': repo['url'], 'stages': stagecount, 'triggers': triggercount})
-                file_pointer.close()
         except Exception as e:
             print(e)
 
-    n = (totalfiles * counts['stagetrigger']) - (counts['stages'] * counts['triggers'])
-    d = math.sqrt((totalfiles * counts['stagesq'] - counts['stages']**2) * (totalfiles * counts['triggersq'] - counts['triggers']**2))
-    corr_coeff = n / d
-    print('coeff is %.3f', corr_coeff)
-    result = {'correlation_coefficient': corr_coeff,
-              'total_stages': counts['stages'],
-              'total_triggers': counts['triggers'],
-              'jenkinsfiles_analysed': jenkinsfiles}
+    try:
+        n = (totalfiles * counts['stagetrigger']) - (counts['stages'] * counts['triggers'])
+        d = math.sqrt((totalfiles * counts['stagesq'] - counts['stages']**2) * (totalfiles * counts['triggersq'] - counts['triggers']**2))
+        corr_coeff = n / d
+        print('coeff is %.3f', corr_coeff)
+        result = {'correlation_coefficient': corr_coeff,
+                  'total_stages': counts['stages'],
+                  'total_triggers': counts['triggers'],
+                  'jenkinsfiles_analysed': jenkinsfiles}
+    except Exception as e:
+        logging.error(e)
+        result = {}
+
     return result
