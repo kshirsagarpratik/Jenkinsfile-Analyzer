@@ -1,3 +1,5 @@
+To run the application:
+
 ####Installing Python
 
 Download the latest version of Python from https://www.python.org/downloads/. Make sure you download Python 3.x.
