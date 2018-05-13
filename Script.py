@@ -4,6 +4,9 @@ We are using a Jupyter Notebook from Anaconda with Python 3.6, we use the follow
 
 from Questions import *
 import json
+import plotly
+import plotly.plotly as py
+import plotly.graph_objs as go
 
 '''Configure the log file'''
 LOG_FILENAME = 'course_proj.log'
@@ -34,15 +37,77 @@ try:
         'trigger_stage_correlation': trigger_stage_corr
     }
 
-    # Writing JSON data
+    # Writing data to .json file
     with open('result.json', 'w') as f:
         json.dump(jsondata, f, ensure_ascii=False, indent=4)
     logging.info('result.json created!')
 
     # creating some graphs with the statistics
 
+    # set plotly credentials
+    plotly.tools.set_credentials_file(username='sphalt', api_key='c8Y1R7qGgroiIHtEnQrm')
+
+    # distribution of the number of pipeline operations in a jenkinsfile
+    stages_count = []
+    for stage in stage_stats['stages_per_file']:
+        stages_count.append(len(stage['stages']))
+    trace0 = go.Box(
+        y=stages_count,
+        name="Number of Stages in a Jenkins Pipeline"
+    )
+    plot0 = [trace0]
+    layout0 = go.Layout(title='Distribution of the number of stages per Jenkinsfile', width=800, height=640)
+    fig0 = go.Figure(data=plot0, layout=layout0)
+
+    py.image.save_as(fig0, filename='Stage_Dist.png')
+    logging.info('Graph - Distribution of the number of stages per Jenkinsfile created')
+    trace1 = go.Bar(
+        x=list(stage_stats['all_stages_found'].keys()),
+        y=list(stage_stats['all_stages_found'].values()),
+        name="Pipeline Operations"
+    )
+    plot1 = [trace1]
+    layout1 = go.Layout(title='Distribution of pipeline operations', width=800, height=640)
+    fig1 = go.Figure(data=plot1, layout=layout1)
+
+    py.image.save_as(fig1, filename='Stage_Dist_bar.png')
+
+    logging.info('Graph - Distribution of pipeline operations created')
+
+    # distribution of the number of pipeline operations in a jenkinsfile
+    post_cond_count = []
+    for post_cond in post_condition_stats['post_conditions']:
+        post_cond_count.append(len(post_cond['post_conditions']))
+    trace2 = go.Box(
+        y = post_cond_count,
+        name = "Number of Post Conditions in a Jenkins Pipeline"
+    )
+    plot2 = [trace2]
+    layout2 = go.Layout(title='Distribution of the number of post conditions per Jenkinsfile', width=800, height=640)
+    fig2 = go.Figure(data=plot2, layout=layout2)
+
+    py.image.save_as(fig2, filename='Post_Conditions_Dist.png')
+    logging.info('Graph - Distribution of Number of Post conditions created')
+
+    trace3 = go.Bar(
+        x=list(post_condition_stats['all_post_conditions'].keys()),
+        y=list(post_condition_stats['all_post_conditions'].values()),
+        name="Post Conditions"
+    )
+    plot3 = [trace3]
+    layout3 = go.Layout(title='Distribution of post conditions', width=800, height=640)
+    fig3 = go.Figure(data=plot3, layout=layout3)
+
+    py.image.save_as(fig3, filename='Post_condition_bar.png')
+    logging.info('Graph - Distribution of post conditions created')
+
+    trace_pie = go.Pie(labels=list(agent_used.keys()), values=list(agent_used.values()))
+
+    py.image.save_as([trace_pie], filename='styled_pie_chart.png')
+    logging.info('Graph - Distribution of agents used created')
 
 except Exception as e:
+    print(e)
     logging.error(e)
 
 

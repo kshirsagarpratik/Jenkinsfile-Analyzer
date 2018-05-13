@@ -268,7 +268,8 @@ def get_post_cond_stats():
 
         result = {'most_frequent': max_dict_list,
                   'least_frequent': min_dict_list,
-                  'post_conditions': post_conditions}
+                  'post_conditions': post_conditions,
+                  'all_post_conditions': post_block}
     except Exception as e:
         logging.error(e)
         result = {}
@@ -326,7 +327,8 @@ def get_pipeline_stage_stats():
         result = {'most_popular_operation': max_stages_dict_list,
                   'least_popular_operation': min_stages_dict_list,
                   'avg_stages': mean_stages,
-                  'stages_per_file': stagesPerFile}
+                  'stages_per_file': stagesPerFile,
+                  'all_stages_found': stages}
     except Exception as e:
         logging.error(e)
         result = {}
