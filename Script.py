@@ -56,7 +56,7 @@ try:
         name="Number of Stages in a Jenkins Pipeline"
     )
     plot0 = [trace0]
-    layout0 = go.Layout(title='Distribution of the number of stages per Jenkinsfile', width=800, height=640)
+    layout0 = go.Layout(title='Distribution of the number of stages per Jenkinsfile', width=1280, height=640)
     fig0 = go.Figure(data=plot0, layout=layout0)
 
     py.image.save_as(fig0, filename='Stage_Dist.png')
@@ -67,7 +67,7 @@ try:
         name="Pipeline Operations"
     )
     plot1 = [trace1]
-    layout1 = go.Layout(title='Distribution of pipeline operations', width=800, height=640)
+    layout1 = go.Layout(title='Distribution of pipeline operations', width=1280, height=720)
     fig1 = go.Figure(data=plot1, layout=layout1)
 
     py.image.save_as(fig1, filename='Stage_Dist_bar.png')
@@ -83,7 +83,7 @@ try:
         name = "Number of Post Conditions in a Jenkins Pipeline"
     )
     plot2 = [trace2]
-    layout2 = go.Layout(title='Distribution of the number of post conditions per Jenkinsfile', width=800, height=640)
+    layout2 = go.Layout(title='Distribution of the number of post conditions per Jenkinsfile', width=1280, height=720)
     fig2 = go.Figure(data=plot2, layout=layout2)
 
     py.image.save_as(fig2, filename='Post_Conditions_Dist.png')
@@ -95,7 +95,7 @@ try:
         name="Post Conditions"
     )
     plot3 = [trace3]
-    layout3 = go.Layout(title='Distribution of post conditions', width=800, height=640)
+    layout3 = go.Layout(title='Distribution of post conditions', width=1280, height=720)
     fig3 = go.Figure(data=plot3, layout=layout3)
 
     py.image.save_as(fig3, filename='Post_condition_bar.png')

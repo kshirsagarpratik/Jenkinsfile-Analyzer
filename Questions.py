@@ -253,6 +253,7 @@ def get_post_cond_stats():
             logging.error(e)
 
     try:
+        # get the post condition with the minimum and maximum count
         min_value = min(post_block.values())
         max_value = max(post_block.values())
         min_result = [(key, value) for key, value in post_block.items() if value == min_value]
@@ -293,14 +294,15 @@ def get_pipeline_stage_stats():
                 stagecount = 0
                 stagesDict = {'url': repo['url'], 'stages': []}
                 for line in file_content:
+                    # using regex to find the stages in the pipeline.
                     m = re.search(r"""\bstage\b\s*\((["'])(?:(?=(\\?))\2.)*?\1\)""", line)
                     if m:
                         stagestr = m.group(0).replace("stage('", "").replace("')", '')
                         stages[stagestr] += 1
-                        stagecount += 1
+                        stagecount += 1 # increment the count od stages for that pipepline
                         stagesDict['stages'].append(stagestr)
 
-                stageCountAll.append(stagecount)
+                stageCountAll.append(stagecount)  # append the count to the list with count for all jenkinsfiles analyzeed
                 stagesPerFile.append(stagesDict)
         except Exception as e:
             print(e)
@@ -353,6 +355,7 @@ def get_trigger_stages_correlation():
                 triggercount = 0
                 insidetrigger = False
                 trigger = ''
+                # using regex to find the triggers section
                 if re.search(r"triggers\s+\{", jenkinsfile_content.text):
                     totalfiles += 1
                     for line in file_content:
@@ -361,6 +364,7 @@ def get_trigger_stages_correlation():
                             insidetrigger = True
                         if insidetrigger:
                             trigger.join(line)
+                            # using regex to find the triggers
                             if re.search(r"(cron|pollSCM|upstream)", line):
                                 triggercount += 1
                             elif re.search(r"\s+\}", line):
@@ -380,6 +384,7 @@ def get_trigger_stages_correlation():
             print(e)
 
     try:
+        # calculate the Pearson correlation coefficient for number of triggers and number of stages in a pipeline
         n = (totalfiles * counts['stagetrigger']) - (counts['stages'] * counts['triggers'])
         d = math.sqrt((totalfiles * counts['stagesq'] - counts['stages']**2) * (totalfiles * counts['triggersq'] - counts['triggers']**2))
         corr_coeff = n / d
