@@ -1,6 +1,6 @@
 ####Installing Python
 
-Download the latest version of Python from https://www.python.org/downloads/. Make sure you download Python 3.x. as that is what we need for the [Understand API](https://scitools.com/support/python-api/)
+Download the latest version of Python from https://www.python.org/downloads/. Make sure you download Python 3.x.
 
 ####Installing pip
 
@@ -15,6 +15,9 @@ Download the latest version of pip from https://pip.pypa.io/en/stable/installing
 
 * run Script.py
 `python Script.py`
+
+* You can view the unit tests in unittests.py, to run them you can execute
+'python unittests.py'
 
 
 # Course Project
