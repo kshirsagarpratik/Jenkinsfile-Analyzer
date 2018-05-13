@@ -28,13 +28,13 @@ try:
 
     # get the result of each of the questions and create a dictionary of the results of the questions to create a json file
     jsondata = {
-        'jenkinsfiles_exception_handling': exception_handled,
-        'docker_used': docker_used,
-        'agents_used': agent_used,
-        'global_agent_used': global_agent_used,
-        'post_condition_stats': post_condition_stats,
-        'stage_stats': stage_stats,
-        'trigger_stage_correlation': trigger_stage_corr
+        'how often do you find exception handling in pipelines': exception_handled,
+        'percent of jenkins pipelines involving docker': docker_used,
+        'what agents are used in a jenkins pipeline': agent_used,
+        'how often is a global agent used in jenkins pipeline': global_agent_used,
+        'what post conditions are commonly found in a jenkins pipeline': post_condition_stats,
+        'what are the common pipeline operations': stage_stats,
+        'correlation between the number of triggers and stages in a pipeline': trigger_stage_corr
     }
 
     # Writing data to .json file

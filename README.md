@@ -1,3 +1,22 @@
+####Installing Python
+
+Download the latest version of Python from https://www.python.org/downloads/. Make sure you download Python 3.x. as that is what we need for the [Understand API](https://scitools.com/support/python-api/)
+
+####Installing pip
+
+Download the latest version of pip from https://pip.pypa.io/en/stable/installing/
+
+####How to run it
+
+* run the following commands to install the required modules
+
+`sudo pip install -r requirements.txt`
+
+
+* run Script.py
+`python Script.py`
+
+
 # Course Project
 
 The goal of your course project is to empirically investigate a large number of devops pipeline programs and obtain statistical data that describe the content and patterns in devops pipelines. You will search and obtain jenkinsfiles and other pipeline artifacts from open-source repositories, e.g., github contains hundreds of pipeline examples and other code artifacts. The result of your investigation will be a report that summarizes the data - you can find an example of a report on my website (https://www.cs.uic.edu/~drmark/index_htm_files/Treasure.pdf). Examples of research questions that you will address include but not limited to the following.
