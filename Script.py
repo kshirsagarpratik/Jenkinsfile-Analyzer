@@ -45,7 +45,7 @@ try:
     # creating some graphs with the statistics
 
     # set plotly credentials
-    plotly.tools.set_credentials_file(username='sphalt', api_key='c8Y1R7qGgroiIHtEnQrm')
+    plotly.tools.set_credentials_file(username='', api_key='')
 
     # distribution of the number of pipeline operations in a jenkinsfile
     stages_count = []
