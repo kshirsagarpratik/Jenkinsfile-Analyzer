@@ -10,7 +10,7 @@ def jenkinsfile_query(keyword, page_number): # to retrieve list of jenkinsfiles 
     # print('Attempting to retrieve jenkinsfile(s) from various GitHub repositories through it\'s REST API...')
     logging.info('Attempting to retrieve jenkinsfile(s) from various GitHub repositories through it\'s REST API... Keyword = ' + keyword + ' Page Number = ' + str(page_number))
     try:
-        repositories = requests.get('https://api.github.com/search/code?q=' + keyword + '+in:file+filename:jenkinsfile+?page=' + str(page_number) + '&per_page=100', auth = ('sphalt', 'outlook<3Traveller'))
+        repositories = requests.get('https://api.github.com/search/code?q=' + keyword + '+in:file+filename:jenkinsfile+?page=' + str(page_number) + '&per_page=100', auth = ('',''))
         return repositories
     except Exception as e:
         print('Error while hitting GitHub REST API for keyword = ' + keyword + ' and page number = ' + str(page_number))
@@ -20,10 +20,10 @@ def jenkinsfile_query(keyword, page_number): # to retrieve list of jenkinsfiles 
 def contents_query(repo_url): # to retrieve contents of specific Jenkinsfile.
     logging.info('Attempting to retrieve contents of Jenkinsfile at URL = ' + repo_url)
     try:
-        jenkinsfile = requests.get(repo_url, auth = ('sphalt', 'outlook<3Traveller')) # Authentication for GitHub
+        jenkinsfile = requests.get(repo_url, auth = ('', '')) # Authentication for GitHub
         print(jenkinsfile)
         logging.info(jenkinsfile)
-        jenkinsfile_content = requests.get(jenkinsfile.json()['download_url'], auth = ('sphalt', 'outlook<3Traveller'))
+        jenkinsfile_content = requests.get(jenkinsfile.json()['download_url'], auth = ('', ''))
         return jenkinsfile_content
     except Exception as e:
         print('Error while retrieve contents of Jenkinsfile at URL = ' + repo_url)
