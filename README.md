@@ -29,21 +29,36 @@ As you can see, at the heart of our system lies a Python script, which governs t
 
 ## Formulation of Research Questions
 
->> “How many Jenkins pipelines have some form of ​Exception Handling incorporated in them?”
+> “How many Jenkins pipelines have some form of ​Exception Handling incorporated in them?”
+
 We were particularly interested in this aspect of a DevOps pipeline as pipeline being a fairly complex process, automating one would bound to have some forms of Exceptions arise as there is plenty of margin for error due to the high number of interdependent components. We were interested in finding out how many of such pipelines ​do ​actually take care of handling runtime exceptions​.
->> “What is the most frequent ​post-condition blocks in the post section within jenkins pipelines?”
+
+> “What is the most frequent ​post-condition blocks in the post section within jenkins pipelines?”
+
 We were interested in finding out what were the most/least popular post actions in a Jenkinsfile. We try to see which one or more additional steps that are run upon the completion of a Pipeline’s or stage’s run​.
->> “What is the most frequently used ​agent ​ in a Jenkins pipeline?”
+
+> “What is the most frequently used ​agent ​ in a Jenkins pipeline?”
+
 Agents specify ​where the entire Pipeline, or a specific stage, will execute in the Jenkins environment. We knew that there are certain kinds of agents that are available to the pipeline, so we wanted to know which ones of them are popular among applications and which ones are not so much.
->> “What fraction of Jenkinsfile pipelines have no ​global agents​?”
+
+> “What fraction of Jenkinsfile pipelines have no ​global agents​?”
+
 We know that lack of a global agent implies that each stage section will need to contain its own agent section, this taking away a certain degree of centrality. We wanted to find out what fraction of Jenkinsfile follow such a pattern.
->> “What percent of Jenkins pipelines involve Docker at some stage of execution?”
+
+> “What percent of Jenkins pipelines involve Docker at some stage of execution?”
+
 Docker, a container technology is prevalent in DevOps due to its performance and scalability in addition to its ​platform independence​. We wanted to find out how many Jenkins pipelines have adopted this technology as part of their routine.
->> “What is the ​correlation between ​triggers in a pipeline and the number of stages​?”
+
+> “What is the ​correlation between ​triggers in a pipeline and the number of stages​?”
+
 We wanted to find out if there exists a correlation amongst the two and if it does, what is the significance of it. It seemed interesting to investigate co dependence of the two phenomena.
->> “What are the most ​frequent​ Jenkins pipeline ​operations​?”
+
+> “What are the most ​frequent​ Jenkins pipeline ​operations​?”
+
 We discovered through observing various Jenkinsfiles that there exist many kinds of operations in a Jenkins pipeline so we try to discover which ones of them are the most frequent.
->> “What is the ​average number of stages​ in a Jenkins pipeline?”
+
+> “What is the ​average number of stages​ in a Jenkins pipeline?”
+
 A Jenkins pipeline can have variable number of stages, so naturally we wanted to find the average number of stages, ie, how many stages is a
 Jenkins pipeline would have, on average.
 
