@@ -7,6 +7,8 @@ We have implemented a Jenkins pipeline analyzer in Python. We aim to address par
 ![architecture](img/arch.PNG)
 <h4 align="center">System Architecture</h4>
 
+---
+
 ![flow](img/flow.PNG)
 <h4 align="center">Pattern: Pipe and Filter</h4>
 
