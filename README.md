@@ -90,6 +90,8 @@ We use this package for logging purposes, ie, creating and maintaining log files
 
 We use this package for generating visualizations such as charts and plots.
 
+---
+
 Our source code is well commented and self explanatory to a great extent. We have made our code as modular as possible, and used functions to maximize reusability and robustness. ​We’ve made the following functions:
 
  `​docker()` - returns the fraction of Jenkins pipelines that incorporate Docker in some way.
@@ -105,10 +107,66 @@ Our source code is well commented and self explanatory to a great extent. We hav
  `​get_trigger_stages_correlation()` - returns the Pearson Correlation Coefficient between triggers and stages, along with related details.
 
 We have also implemented functions for retrieving Jenkinsfiles and their contents from GitHub API as well as converting into .txt files and parsing them:
-> ​jenkinsfile_query ​- Iterate through all GitHub repositories for retrieving Jenkinsfiles.
-> ​contents_query ​- Grab the raw content of the Jenkinsfile.
-> ​readyFile ​- Create a .txt from the raw content and return parsed contents for further processing.
 
+ `​jenkinsfile_query` ​- Iterate through all GitHub repositories for retrieving Jenkinsfiles.
+
+ `​contents_query` ​- Grab the raw content of the Jenkinsfile.
+
+ `​readyFile` ​- Create a .txt from the raw content and return parsed contents for further processing.
+
+## Descriptions of Experiments:
+
+So as we mentioned earlier, we used Regex to get the vital information and we performed necessary mathematical operations on the enumerated data to generate results for the research questions. Here are the details of how we approached each of those aspects. Please refer to functions in code for a comprehensive understanding.
+
+### Exception Handling
+
+​We observed that a ‘try’ block in groovy DSL would signify exception handling in a Jenkins pipeline​. So we used Regex to count the occurrences of such ‘try’ blocks. Dividing the number of Jenkinsfiles that had at least 1 occurrence of the word ‘try { ’ (exact match) by total number of Jenkinsfiles we obtained gave us the answer.
+
+Regex expression = `‘\btry\b\s*\{‘`
+
+### Post-Condition block
+
+We calculated the occurrences of all the possible post actions (always, fixed, changed, regression, aborted, failure, success, unstable, cleanup) similar to above. We then sorted the results.
+
+Regex expression = `‘\balways\b\s*\{‘` [replace ‘always’ with others.]
+
+### Popular Agents
+
+​Similar to above, for all the agents(any, none, label, docker, node, dockerfile.)
+
+Regex expression = `'\bagent\b\s*\bnone\b’` [replace ‘none’ with others.]
+
+### No Global Agent
+
+Subset of above question. Return the occurrence of agent of type ‘none’. Execute similar to previous.
+
+### Docker
+
+​We observed that a `‘docker { ’` or `‘dockerfile { ’` block in groovy DSL would signify use of Docker in a Jenkins pipeline​. So we used Regex to count the occurences of such blocks. Dividing the number of Jenkinsfiles that had at least 1 occurrence of these words (exact match) by total number of Jenkinsfiles we obtained gave us the answer.
+
+Regex expression = `‘\btry\b\s*\{‘`
+
+### Correlation(Triggers, Stages)
+
+​Treat number of triggers as ‘x’ and number of stages as ‘y’. Then find `sum(xy)`, `sum(x^2​)` and `sum(y^2​​)` and other related quantities. Apply Pearson’s Correlation Coefficient to find `Correlation(x,y)`. Using Regex in a similar way, count the aforementioned quantities. Please refer to code for better understanding.
+
+### Popular Operations
+
+​We calculated the occurrences of all the possible operations (operations are equivalent to stages) similar to finding post-condition blocks. We then sorted the results.
+
+Regex expression = `‘\bstage\b\s*\((["'])(?:(?=(\\?))\2.)*?\1\’`
+
+### Average Stages
+
+​Subset of above problem. Find occurrence of ‘stage’ over all of the Jenkinsfiles. Returns a `fraction`.
+
+## Results and Explanations
+
+We generated the results of the analysis and output it in JSON. We also generated visualizations of the results in the form of **Bar Charts**, **Pie Charts**, and **Box Plots**. The charts and plots are very easy to understand and self explanatory. The JSON that we’ve generated contains keys and values. The key represents a particular research question and the contents within represent the answer to the question along with extra details when applicable (such as frequency, sorted order, etc.) Sample outputs have been uploaded to the repository.
+
+## Conclusion
+
+We were able to answer the questions we formulated to a pretty good extent. `JSON` and `Plotly` allowed us to give a neat and comprehensible display of the results. We used `Regex` to perform our core functionality yet Regex is known to be a heavy process that doesn’t give `sublinear` time complexity. Overall, our system has time complexity of ​`O(n3​ ​)` ​where n represents number of input Jenkinsfile available. In the future we can try using different approaches such tokenizers from [`Keras`](https://keras.io/) or [`Spacy`](https://spacy.io) to give us better time performance.
 
 ## Express Execution
 
