@@ -148,7 +148,7 @@ Regex expression = `‘\btry\b\s*\{‘`
 
 ### Correlation(Triggers, Stages)
 
-​Treat number of triggers as ‘x’ and number of stages as ‘y’. Then find `sum(xy)`, `sum(x^2​)` and `sum(y^2​​)` and other related quantities. Apply Pearson’s Correlation Coefficient to find `Correlation(x,y)`. Using Regex in a similar way, count the aforementioned quantities. Please refer to code for better understanding.
+​Treat number of triggers as ‘x’ and number of stages as ‘y’. Then find `sum(xy)`, `sum(x<sup>2</sup>​)` and `sum(y<sup>2</sup>​​)` and other related quantities. Apply Pearson’s Correlation Coefficient to find `Correlation(x,y)`. Using Regex in a similar way, count the aforementioned quantities. Please refer to code for better understanding.
 
 ### Popular Operations
 
@@ -166,7 +166,7 @@ We generated the results of the analysis and output it in JSON. We also generate
 
 ## Conclusion
 
-We were able to answer the questions we formulated to a pretty good extent. `JSON` and `Plotly` allowed us to give a neat and comprehensible display of the results. We used `Regex` to perform our core functionality yet Regex is known to be a heavy process that doesn’t give `sublinear` time complexity. Overall, our system has time complexity of ​`O(n3​ ​)` ​where n represents number of input Jenkinsfile available. In the future we can try using different approaches such tokenizers from [`Keras`](https://keras.io/) or [`Spacy`](https://spacy.io) to give us better time performance.
+We were able to answer the questions we formulated to a pretty good extent. `JSON` and `Plotly` allowed us to give a neat and comprehensible display of the results. We used `Regex` to perform our core functionality yet Regex is known to be a heavy process that doesn’t give `sublinear` time complexity. Overall, our system has time complexity of ​`**O(n<sup>3</sup>​​**)` ​where n represents number of input Jenkinsfile available. In the future we can try using different approaches such tokenizers from [`Keras`](https://keras.io/) or [`Spacy`](https://spacy.io) to give us better time performance.
 
 ## Express Execution
 
