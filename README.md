@@ -88,7 +88,27 @@ We use this package for logging purposes, ie, creating and maintaining log files
 
 `Plotly`
 
-We use this package for generating visualisations such as charts and plots.
+We use this package for generating visualizations such as charts and plots.
+
+Our source code is well commented and self explanatory to a great extent. We have made our code as modular as possible, and used functions to maximize reusability and robustness. ​We’ve made the following functions:
+
+ `​docker()` - returns the fraction of Jenkins pipelines that incorporate Docker in some way.
+
+ `​exception_handling()` - returns fraction of Jenkins pipelines that incorporate Exception Handling in some way.
+
+ ​`popular_agent()​` - returns a list of popular agents with their frequency.
+
+ `​get_post_cond_stats()` - returns a list of frequent post-condition operations with their frequency.
+
+ `​get_pipeline_stage_stats()` - returns the average number of stages found in the Jenkins pipelines.
+
+ `​get_trigger_stages_correlation()` - returns the Pearson Correlation Coefficient between triggers and stages, along with related details.
+
+We have also implemented functions for retrieving Jenkinsfiles and their contents from GitHub API as well as converting into .txt files and parsing them:
+> ​jenkinsfile_query ​- Iterate through all GitHub repositories for retrieving Jenkinsfiles.
+> ​contents_query ​- Grab the raw content of the Jenkinsfile.
+> ​readyFile ​- Create a .txt from the raw content and return parsed contents for further processing.
+
 
 ## Express Execution
 
