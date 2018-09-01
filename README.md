@@ -62,6 +62,23 @@ We discovered through observing various Jenkinsfiles that there exist many kinds
 A Jenkins pipeline can have variable number of stages, so naturally we wanted to find the average number of stages, ie, how many stages is a
 Jenkins pipeline would have, on average.
 
+## Details of the Implementation
+
+The system was implemented using Python 3.6.5 and PyCharm IDE. The logistic details of the implementation have been mentioned in the previous sections of this document. Here are some Python modules we used to implement the code:
+
+`* Requests`
+We used this package to deal with HTTP requests in order to interact with GitHub API to retrieve Jenkinsfiles.
+`* RE`
+This Regular Expressions library was used to a great extent as part of our Regex component. In the next section, we’ll show you how we used Regex to search/match patterns in the Jenkinsfile to find word strings that are pertinent in the empirical analysis.
+`* Math`
+We use this library in order to implement formulae used to find Carl Pearson’s Correlation coefficient.
+`* JSON`
+We use this library to produce our output in a pretty JSON format.
+`* Logging`
+We use this package for logging purposes, ie, creating and maintaining log files.
+`* Plotly`
+We use this package for generating visualisations such as charts and plots.
+
 ## Express Execution
 
 **Note : Please enter your own credentials for github if you want to execute the code and see!**
