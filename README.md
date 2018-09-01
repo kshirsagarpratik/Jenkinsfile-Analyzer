@@ -5,10 +5,10 @@
 We have implemented a Jenkins pipeline analyzer in Python. We aim to address particular aspects of a Jenkins pipeline and we explored a lot of possibilities. A detailed description of our actions is given throughout this document. Below, we start with an abstract of our system.
 
 ![architecture](img/arch.PNG)
-<h4>System Architecture</h4>
+<h4 align="center">System Architecture</h4>
 
 ![flow](img/flow.PNG)
-<h4>Pattern: Pipe and Filter</h4>
+<h4 align="center">Pattern: Pipe and Filter</h4>
 
 ## Express Execution
 
